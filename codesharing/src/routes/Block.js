@@ -24,10 +24,10 @@ const Block = () => {
     })
 
     useEffect(() => {
-        axios.get(`http://localhost:12345/api/v1/blocks/${blockId}`)
+        axios.get(`http://localhost:5050/api/v1/blocks/${blockId}`)
             .then(result => setBlock(result.data))
             .catch(error => console.error(error))
-        axios.get("http://localhost:12345/api/v1/is_mentor", {params: {block_id: blockId}})
+        axios.get("http://localhost:5050/api/v1/is_mentor", {params: {block_id: blockId}})
             .then(result => setIsMentor({'block_id':result?.data?.block_id, 'is_mentor':result?.data?.is_mentor}))
     }, []);
 

@@ -14,14 +14,14 @@ const Lobby = () => {
 
     useEffect(() => {
       Blocks.map((block) => (
-        axios.post("http://localhost:12345/post", block)
+        axios.post("http://localhost:5050/post", block)
           .then(result => console.log(result))
           .catch(error => console.log(error))
       ))
     }, []);
 
     useEffect(() => {
-        axios.get("http://localhost:12345/api/v1/code_blocks")
+        axios.get("http://localhost:5050/api/v1/code_blocks")
             .then(result => setCodeBlocks(result.data))
             .catch(error => console.log(error))
     }, []);

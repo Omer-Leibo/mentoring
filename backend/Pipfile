@@ -1,0 +1,31 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+Flask="*"
+Flask-SocketIO="*"
+Flask-SQLAlchemy="*"
+flask-cors="*"
+flask_cors="*"
+greenlet="*"
+h11="*"
+importlib-metadata="*"
+itsdangerous="*"
+Jinja2="*"
+MarkupSafe="*"
+netifaces="*"
+psycopg2-binary="*"
+python-engineio="*"
+python-socketio="*"
+simple-websocket="*"
+socketio="*"
+SQLAlchemy="*"
+typing_extensions="*"
+Werkzeug="*"
+wsproto="*"
+zipp="*"
+
+[requires]
+python_version = "3.11"

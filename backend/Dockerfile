@@ -3,7 +3,7 @@ FROM python:3.11
 
 WORKDIR /backend
 
-EXPOSE 5050
+EXPOSE 12345
 
 COPY Pipfile Pipfile.lock ./
 
@@ -13,4 +13,4 @@ RUN pip install -r requirements.txt
 
 COPY . ./
 
-CMD ["flask", "run", "--host=0.0.0.0", "--port=5050"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=12345"]
