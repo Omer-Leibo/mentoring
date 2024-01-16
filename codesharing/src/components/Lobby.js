@@ -4,7 +4,6 @@ import axios from 'axios';
 
 const Lobby = () => {
     const [codeBlocks, setCodeBlocks] = useState([])
-    // const [newCodeBlock, setNewCodeBlock] = useState({title: '', code: ''})
     
     const Blocks = [
       {id: 1, title: 'Async case', code:'async function fetchData() {}', solution: ''},
