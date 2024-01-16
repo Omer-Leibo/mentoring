@@ -34,3 +34,10 @@ def post_code_to_db():
     db.session.add(new_data)
     db.session.commit()
     return make_response(jsonify({'message': new_data.json()}), 201)
+
+@app.route('/delete/<int:block_id>', methods=['DELETE']) # Delete a code block
+def delete_code_block(block_id):
+    code_block = CodeBlock.query.get(block_id)
+    db.session.delete(code_block)
+    db.session.commit()
+    return make_response(jsonify({'message': 'Deleted'}), 201)

@@ -4,6 +4,22 @@ import axios from 'axios';
 
 const Lobby = () => {
     const [codeBlocks, setCodeBlocks] = useState([])
+    // const [newCodeBlock, setNewCodeBlock] = useState({title: '', code: ''})
+    
+    const Blocks = [
+      {id: 1, title: 'Async case', code:'async function fetchData() {}', solution: ''},
+      {id: 2, title: 'Event handling', code:'function handleClick(e) {}',  solution: ''},
+      {id: 3, title: 'Conditional rendering', code:'function renderConditionally() {}',  solution: ''},
+      {id: 4, title: 'Hello World', code:'function helloWorld() {}', solution: ''},
+    ]
+
+    useEffect(() => {
+      Blocks.map((block) => (
+        axios.post("http://localhost:12345/post", block)
+          .then(result => console.log(result))
+          .catch(error => console.log(error))
+      ))
+    }, []);
 
     useEffect(() => {
         axios.get("http://localhost:12345/api/v1/code_blocks")
